@@ -1,306 +1,116 @@
-"<!DOCTYPE html>
-<html lang=\"en\">
-<head>
-    <meta charset=\"UTF-8\" />
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
-    <title>Brightline University — Learn Boldly. Lead Brightly.</title>
-    <meta name=\"description\" content=\"Brightline University offers world-class undergraduate, postgraduate, and research programs across engineering, business, design and the sciences. Apply for the 2026 intake today.\" />
-    <meta name=\"keywords\" content=\"Brightline University, university, college, education, undergraduate, postgraduate, engineering, business, design, MBA, computer science, admissions 2026\" />
-    <meta name=\"author\" content=\"Brightline University\" />
-    <meta property=\"og:title\" content=\"Brightline University — Learn Boldly. Lead Brightly.\" />
-    <meta property=\"og:description\" content=\"A modern university shaping fearless thinkers across engineering, business, design, and the sciences.\" />
-    <meta property=\"og:type\" content=\"website\" />
-    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />
-    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin />
-    <link href=\"https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap\" rel=\"stylesheet\" />
-    <link rel=\"icon\" type=\"image/svg+xml\" href=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230f172a'/%3E%3Ctext x='50' y='68' text-anchor='middle' fill='%23ff5a1f' font-family='Outfit' font-size='62' font-weight='900'%3EB%3C/text%3E%3C/svg%3E\" />
-    <link rel=\"stylesheet\" href=\"css/styles.css\" />
-</head>
-<body>
-    <div class=\"announce\" data-testid=\"announce-banner\">
-        Applications for the 2026 intake are now open. <a href=\"contact.html\">Register today &rarr;</a>
-    </div>
+import { createFileRoute, Link } from "@tanstack/react-router";
+import heroCampus from "@/assets/hero-campus.jpg";
+import classroom from "@/assets/classroom.jpg";
+import { Layout } from "@/components/Layout";
 
-    <header class=\"site-header\">
-        <div class=\"container\">
-            <nav class=\"nav\" aria-label=\"Primary\">
-                <a href=\"index.html\" class=\"logo\" data-testid=\"brand-logo\">
-                    <span class=\"logo-mark\">B</span>
-                    <span>Brightline University</span>
-                </a>
-                <ul class=\"nav-links\" data-testid=\"nav-links\">
-                    <li><a href=\"index.html\" data-nav-link>Home</a></li>
-                    <li><a href=\"about.html\" data-nav-link>About</a></li>
-                    <li><a href=\"courses.html\" data-nav-link>Courses</a></li>
-                    <li><a href=\"gallery.html\" data-nav-link>Gallery</a></li>
-                    <li><a href=\"contact.html\" data-nav-link>Contact</a></li>
-                </ul>
-                <a href=\"contact.html\" class=\"btn btn-primary nav-cta\" data-testid=\"nav-apply-btn\">Apply Now</a>
-                <button class=\"hamburger\" data-testid=\"nav-hamburger\" aria-label=\"Toggle menu\" aria-expanded=\"false\">
-                    <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"><path d=\"M4 6h16M4 12h16M4 18h16\"/></svg>
-                </button>
-            </nav>
-            <div class=\"mobile-menu\" data-testid=\"mobile-menu\">
-                <a href=\"index.html\">Home</a>
-                <a href=\"about.html\">About</a>
-                <a href=\"courses.html\">Courses</a>
-                <a href=\"gallery.html\">Gallery</a>
-                <a href=\"contact.html\">Contact</a>
-                <a href=\"contact.html\" class=\"btn btn-primary\">Apply Now</a>
-            </div>
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "BrightPath Academy — Quality Education for a Brighter Future" },
+      { name: "description", content: "BrightPath Academy offers undergraduate and postgraduate courses with experienced faculty, modern labs and a vibrant campus. Apply for admission today." },
+      { name: "keywords", content: "education, academy, university, courses, admission, college, undergraduate, postgraduate, BrightPath" },
+      { property: "og:title", content: "BrightPath Academy — Quality Education for a Brighter Future" },
+      { property: "og:description", content: "Undergraduate and postgraduate courses, expert faculty, modern campus." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+  }),
+  component: Home,
+});
+
+function Home() {
+  return (
+    <Layout>
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <img
+          src={heroCampus}
+          alt="BrightPath Academy modern campus with students walking"
+          width={1536}
+          height={1024}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/40" />
+        <div className="relative mx-auto max-w-6xl px-4 py-24 md:py-32 text-primary-foreground">
+          <span className="inline-block px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-semibold">
+            Admissions Open 2026
+          </span>
+          <h1 className="mt-4 text-4xl md:text-6xl font-bold max-w-3xl">
+            Learn Today, Lead Tomorrow.
+          </h1>
+          <p className="mt-4 text-lg md:text-xl max-w-2xl opacity-90">
+            BrightPath Academy delivers world-class education with experienced faculty,
+            modern laboratories, and a campus designed to inspire excellence.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link to="/courses" className="inline-flex items-center px-6 py-3 rounded-md bg-secondary text-secondary-foreground font-semibold hover:opacity-90 transition">
+              Explore Courses
+            </Link>
+            <Link to="/contact" className="inline-flex items-center px-6 py-3 rounded-md bg-white/10 backdrop-blur border border-white/30 font-semibold hover:bg-white/20 transition">
+              Apply Now
+            </Link>
+          </div>
         </div>
-    </header>
+      </section>
 
-    <main>
-        <!-- ============ HERO ============ -->
-        <section class=\"hero\">
-            <div class=\"container\">
-                <div class=\"hero-grid\">
-                    <div class=\"reveal\">
-                        <span class=\"hero-eyebrow\" data-testid=\"hero-eyebrow\">Admissions Open · Fall 2026</span>
-                        <h1 data-testid=\"hero-headline\">Learn <span>boldly.</span><br/>Lead brightly.</h1>
-                        <p data-testid=\"hero-subtext\">A modern university shaping fearless thinkers across engineering, business, design, and the sciences. Built for the curious. Made for what comes next.</p>
-                        <div class=\"hero-actions\">
-                            <a href=\"courses.html\" class=\"btn btn-primary\" data-testid=\"hero-cta-explore\">Explore Courses</a>
-                            <a href=\"about.html\" class=\"btn btn-secondary\" data-testid=\"hero-cta-learn\">Our Story</a>
-                        </div>
-                        <div class=\"hero-meta\">
-                            <div><div class=\"num\">42+</div><div class=\"lab\">Programs</div></div>
-                            <div><div class=\"num\">98%</div><div class=\"lab\">Graduate Outcome</div></div>
-                            <div><div class=\"num\">120+</div><div class=\"lab\">Faculty</div></div>
-                            <div><div class=\"num\">28</div><div class=\"lab\">Countries</div></div>
-                        </div>
-                    </div>
-                    <div class=\"hero-visual reveal\" data-testid=\"hero-visual\">
-                        <img src=\"https://images.pexels.com/photos/7972324/pexels-photo-7972324.jpeg\" alt=\"Students walking through the modern Brightline University campus on a bright afternoon\" loading=\"eager\" />
-                        <div class=\"hero-visual-tag\">
-                            <div class=\"lab\">Open Day · March 14</div>
-                            <div class=\"title\">Tour the campus &amp; meet faculty</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Marquee -->
-            <div class=\"marquee\" aria-hidden=\"true\">
-                <div class=\"marquee-track\">
-                    <span>INNOVATION <span class=\"dot\">•</span> DISCOVERY <span class=\"dot\">•</span> EXCELLENCE <span class=\"dot\">•</span> LEADERSHIP <span class=\"dot\">•</span> COMMUNITY <span class=\"dot\">•</span></span>
-                    <span>INNOVATION <span class=\"dot\">•</span> DISCOVERY <span class=\"dot\">•</span> EXCELLENCE <span class=\"dot\">•</span> LEADERSHIP <span class=\"dot\">•</span> COMMUNITY <span class=\"dot\">•</span></span>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ HIGHLIGHTS (BENTO) ============ -->
-        <section class=\"section\">
-            <div class=\"container\">
-                <div class=\"section-head reveal\">
-                    <span class=\"overline\">Why Brightline</span>
-                    <h2>Built for ambition. Grounded in research.</h2>
-                    <p>A university where rigorous academics meet the energy of a startup studio — small cohorts, world-class mentors, and labs that ship real work.</p>
-                </div>
-
-                <div class=\"bento\">
-                    <div class=\"bento-card span-3 row-span-2 dark reveal\" data-testid=\"highlight-1\">
-                        <div class=\"icon\">
-                            <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\"/></svg>
-                        </div>
-                        <div>
-                            <h3 style=\"margin-bottom:0.75rem\">Top 50 nationally ranked across 6 disciplines</h3>
-                            <p>Engineering, Computer Science, Business, Design, Life Sciences and Public Policy — consistently rated for academic excellence and outcomes.</p>
-                        </div>
-                    </div>
-
-                    <div class=\"bento-card span-3 tangerine reveal\" data-testid=\"highlight-2\">
-                        <div>
-                            <div class=\"bento-num\">1 : 12</div>
-                            <h3 style=\"margin-top:0.5rem\">Faculty-to-student ratio</h3>
-                        </div>
-                        <p>Small studios, large conversations. Every student gets direct mentorship.</p>
-                    </div>
-
-                    <div class=\"bento-card span-3 reveal\" data-testid=\"highlight-3\">
-                        <div class=\"icon\">
-                            <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M22 11.08V12a10 10 0 11-5.93-9.14\"/><polyline points=\"22 4 12 14.01 9 11.01\"/></svg>
-                        </div>
-                        <div>
-                            <h3 style=\"margin-bottom:0.75rem\">98% graduate outcomes</h3>
-                            <p>Employed, in graduate school, or launching ventures within six months of commencement.</p>
-                        </div>
-                    </div>
-
-                    <div class=\"bento-card span-2 reveal\" data-testid=\"highlight-4\">
-                        <div class=\"icon\">
-                            <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z\"/></svg>
-                        </div>
-                        <div>
-                            <h3>Research labs across 11 fields</h3>
-                            <p>Open to undergraduates from day one.</p>
-                        </div>
-                    </div>
-
-                    <div class=\"bento-card span-2 cobalt reveal\" data-testid=\"highlight-5\">
-                        <div>
-                            <div class=\"bento-num\">$28M</div>
-                            <h3 style=\"margin-top:0.5rem\">Annual research funding</h3>
-                        </div>
-                    </div>
-
-                    <div class=\"bento-card span-2 reveal\" data-testid=\"highlight-6\">
-                        <div class=\"icon\">
-                            <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2\"/><circle cx=\"8.5\" cy=\"7\" r=\"4\"/><path d=\"M20 8v6M23 11h-6\"/></svg>
-                        </div>
-                        <div>
-                            <h3>40+ student-led clubs</h3>
-                            <p>From robotics to spoken word to esports.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ PROGRAMS PREVIEW ============ -->
-        <section class=\"section\" style=\"background:#f1f5f9\">
-            <div class=\"container\">
-                <div class=\"section-head reveal\">
-                    <span class=\"overline\">Featured Programs</span>
-                    <h2>Programs that move with the world.</h2>
-                    <p>Bachelor's, master's and research tracks designed alongside industry, with project-led curricula and real-world capstones.</p>
-                </div>
-
-                <div class=\"cards-grid\">
-                    <article class=\"course-card reveal\" data-testid=\"program-card-1\">
-                        <div class=\"course-card-img\">
-                            <img src=\"https://images.pexels.com/photos/36834057/pexels-photo-36834057.jpeg\" alt=\"A modern lecture hall during a computer science seminar at Brightline University\" loading=\"lazy\" />
-                        </div>
-                        <div class=\"course-card-body\">
-                            <span class=\"course-tag\">Undergraduate</span>
-                            <h3>B.Sc. in Computer Science &amp; AI</h3>
-                            <p>Four-year program with concentrations in machine learning, systems, and human-centred computing.</p>
-                            <div class=\"course-meta\">
-                                <div>4 years</div><div>•</div><div>Sept &amp; Jan intakes</div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class=\"course-card reveal\" data-testid=\"program-card-2\">
-                        <div class=\"course-card-img\">
-                            <img src=\"https://images.pexels.com/photos/35545651/pexels-photo-35545651.jpeg\" alt=\"Students researching together in the Brightline central library\" loading=\"lazy\" />
-                        </div>
-                        <div class=\"course-card-body\">
-                            <span class=\"course-tag\">Postgraduate</span>
-                            <h3>MBA — Strategy &amp; Innovation</h3>
-                            <p>A 16-month MBA reimagined for builders, with electives in venture creation, AI strategy, and ESG.</p>
-                            <div class=\"course-meta\">
-                                <div>16 months</div><div>•</div><div>Sept intake</div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class=\"course-card reveal\" data-testid=\"program-card-3\">
-                        <div class=\"course-card-img\">
-                            <img src=\"https://images.pexels.com/photos/21415155/pexels-photo-21415155.jpeg\" alt=\"Modern angular architecture of the Brightline design and architecture school\" loading=\"lazy\" />
-                        </div>
-                        <div class=\"course-card-body\">
-                            <span class=\"course-tag\">Undergraduate</span>
-                            <h3>B.Des. in Industrial &amp; Interaction Design</h3>
-                            <p>Studio-based program blending craft, code and critical theory across product, service and digital design.</p>
-                            <div class=\"course-meta\">
-                                <div>4 years</div><div>•</div><div>Sept intake</div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div style=\"margin-top:2.5rem; text-align:center\">
-                    <a href=\"courses.html\" class=\"btn-ghost\" data-testid=\"see-all-programs\">See all 42 programs &rarr;</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ TESTIMONIALS ============ -->
-        <section class=\"section\">
-            <div class=\"container\">
-                <div class=\"section-head reveal\">
-                    <span class=\"overline\">Student Voices</span>
-                    <h2>Words from the people who built here.</h2>
-                </div>
-                <div class=\"cards-grid\">
-                    <div class=\"testimonial reveal\">
-                        <blockquote>Brightline doesn't teach you what to think — it teaches you how to ask better questions. The studio culture changed me.</blockquote>
-                        <div class=\"testimonial-meta\">
-                            <div class=\"avatar\">AM</div>
-                            <div><div class=\"name\">Anya Mehrotra</div><div class=\"role\">B.Des. '25 · Now at Frog Design</div></div>
-                        </div>
-                    </div>
-                    <div class=\"testimonial reveal\">
-                        <blockquote>I co-authored my first research paper in second year. That kind of access doesn't happen everywhere.</blockquote>
-                        <div class=\"testimonial-meta\">
-                            <div class=\"avatar\" style=\"background:var(--tangerine)\">JK</div>
-                            <div><div class=\"name\">Jordan Kim</div><div class=\"role\">B.Sc. CS '26 · NSF Fellow</div></div>
-                        </div>
-                    </div>
-                    <div class=\"testimonial reveal\">
-                        <blockquote>The MBA cohort is small enough to know everyone and ambitious enough to keep you sharp every day.</blockquote>
-                        <div class=\"testimonial-meta\">
-                            <div class=\"avatar\" style=\"background:#0f172a\">RP</div>
-                            <div><div class=\"name\">Rohan Patel</div><div class=\"role\">MBA '25 · Founder, Northbound</div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- ============ FOOTER ============ -->
-    <footer class=\"footer\" id=\"footer\">
-        <div class=\"container\">
-            <div class=\"footer-cta\">
-                <h2>Ready to learn boldly? <em>Apply for Fall 2026.</em></h2>
-                <a href=\"contact.html\" class=\"btn btn-tangerine\" data-testid=\"footer-apply-btn\">Start your application</a>
-            </div>
-            <div class=\"footer-grid\">
-                <div class=\"brand\">
-                    <div class=\"logo\" style=\"color:#fdfcf8\">
-                        <span class=\"logo-mark\" style=\"background:#fdfcf8;color:#0f172a\">B</span>
-                        <span>Brightline University</span>
-                    </div>
-                    <p>A globally minded, research-intensive university for a generation rebuilding what comes next.</p>
-                </div>
-                <div>
-                    <h4>Explore</h4>
-                    <ul>
-                        <li><a href=\"about.html\">About</a></li>
-                        <li><a href=\"courses.html\">Courses</a></li>
-                        <li><a href=\"gallery.html\">Gallery</a></li>
-                        <li><a href=\"contact.html\">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Admissions</h4>
-                    <ul>
-                        <li><a href=\"contact.html\">Apply</a></li>
-                        <li><a href=\"contact.html\">Visit Campus</a></li>
-                        <li><a href=\"contact.html\">Scholarships</a></li>
-                        <li><a href=\"contact.html\">FAQ</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href=\"contact.html\">Instagram</a></li>
-                        <li><a href=\"contact.html\">LinkedIn</a></li>
-                        <li><a href=\"contact.html\">YouTube</a></li>
-                        <li><a href=\"contact.html\">Newsletter</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class=\"footer-bottom\">
-                <div>© <span data-current-year>2026</span> Brightline University. All rights reserved.</div>
-                <div>MANTRA 2026 Summer School · Frontend Assignment</div>
-            </div>
+      {/* Highlights */}
+      <section className="mx-auto max-w-6xl px-4 py-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-center">Why Choose BrightPath?</h2>
+        <p className="mt-2 text-center text-muted-foreground max-w-2xl mx-auto">
+          A 20-year legacy of academic excellence, innovation, and student success.
+        </p>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {[
+            { icon: "🎓", title: "Expert Faculty", desc: "Learn from PhD-qualified professors with decades of industry experience." },
+            { icon: "🔬", title: "Modern Labs", desc: "State-of-the-art laboratories for science, computing, and engineering." },
+            { icon: "🌍", title: "Global Network", desc: "Exchange programs and partnerships with universities worldwide." },
+          ].map((f) => (
+            <article key={f.title} className="bg-card rounded-xl p-6 border border-border shadow-sm hover:shadow-md transition">
+              <div className="text-3xl">{f.icon}</div>
+              <h3 className="mt-3 text-xl font-semibold">{f.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{f.desc}</p>
+            </article>
+          ))}
         </div>
-    </footer>
+      </section>
 
-    <script src=\"js/script.js\"></script>
-</body>
-</html>
-"
+      {/* Stats */}
+      <section className="bg-accent">
+        <div className="mx-auto max-w-6xl px-4 py-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          {[
+            ["10,000+", "Students"], ["250+", "Faculty"], ["50+", "Programs"], ["95%", "Placement"],
+          ].map(([n, l]) => (
+            <div key={l}>
+              <div className="text-3xl md:text-4xl font-bold font-display text-primary">{n}</div>
+              <div className="text-sm text-muted-foreground mt-1">{l}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA with image */}
+      <section className="mx-auto max-w-6xl px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
+        <img
+          src={classroom}
+          alt="Diverse students collaborating on laptops in a modern classroom"
+          width={1024}
+          height={768}
+          loading="lazy"
+          className="rounded-xl shadow-lg w-full h-auto"
+        />
+        <div>
+          <h2 className="text-3xl md:text-4xl font-bold">Built for Curious Minds</h2>
+          <p className="mt-3 text-muted-foreground">
+            From day one, our students engage in research, real-world projects, and
+            collaborative learning. We don't just teach — we mentor the next generation
+            of thinkers, builders, and leaders.
+          </p>
+          <Link to="/about" className="mt-6 inline-flex items-center px-5 py-2.5 rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90">
+            Learn More About Us →
+          </Link>
+        </div>
+      </section>
+    </Layout>
+  );
+}
