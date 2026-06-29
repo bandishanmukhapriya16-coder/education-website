@@ -1,114 +1,65 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import heroCampus from "@/assets/hero-campus.jpg";
-import classroom from "@/assets/classroom.jpg";
+import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
+import library from "@/assets/library.jpg";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "BrightPath Academy — Quality Education for a Brighter Future" },
-      { name: "description", content: "BrightPath Academy offers undergraduate and postgraduate courses with experienced faculty, modern labs and a vibrant campus. Apply for admission today." },
-      { name: "keywords", content: "education, academy, university, courses, admission, college, undergraduate, postgraduate, BrightPath" },
-      { property: "og:title", content: "BrightPath Academy — Quality Education for a Brighter Future" },
-      { property: "og:description", content: "Undergraduate and postgraduate courses, expert faculty, modern campus." },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { title: "About BrightPath Academy — Our Mission & History" },
+      { name: "description", content: "Founded in 2005, BrightPath Academy is committed to academic excellence, innovation, and student success. Learn about our mission, vision and values." },
+      { name: "keywords", content: "about brightpath, education institute, mission, vision, history, academy" },
+      { property: "og:title", content: "About BrightPath Academy" },
+      { property: "og:description", content: "Our mission, vision, and 20-year legacy of educational excellence." },
+      { property: "og:url", content: "/about" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "/about" }],
   }),
-  component: Home,
+  component: About,
 });
 
-function Home() {
+function About() {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <img
-          src={heroCampus}
-          alt="BrightPath Academy modern campus with students walking"
-          width={1536}
-          height={1024}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/40" />
-        <div className="relative mx-auto max-w-6xl px-4 py-24 md:py-32 text-primary-foreground">
-          <span className="inline-block px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-semibold">
-            Admissions Open 2026
-          </span>
-          <h1 className="mt-4 text-4xl md:text-6xl font-bold max-w-3xl">
-            Learn Today, Lead Tomorrow.
-          </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-2xl opacity-90">
-            BrightPath Academy delivers world-class education with experienced faculty,
-            modern laboratories, and a campus designed to inspire excellence.
+      <section className="bg-primary text-primary-foreground py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <h1 className="text-4xl md:text-5xl font-bold">About BrightPath</h1>
+          <p className="mt-3 max-w-2xl opacity-90">
+            Two decades of nurturing minds, building careers, and shaping leaders.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link to="/courses" className="inline-flex items-center px-6 py-3 rounded-md bg-secondary text-secondary-foreground font-semibold hover:opacity-90 transition">
-              Explore Courses
-            </Link>
-            <Link to="/contact" className="inline-flex items-center px-6 py-3 rounded-md bg-white/10 backdrop-blur border border-white/30 font-semibold hover:bg-white/20 transition">
-              Apply Now
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* Highlights */}
-      <section className="mx-auto max-w-6xl px-4 py-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-center">Why Choose BrightPath?</h2>
-        <p className="mt-2 text-center text-muted-foreground max-w-2xl mx-auto">
-          A 20-year legacy of academic excellence, innovation, and student success.
-        </p>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {[
-            { icon: "🎓", title: "Expert Faculty", desc: "Learn from PhD-qualified professors with decades of industry experience." },
-            { icon: "🔬", title: "Modern Labs", desc: "State-of-the-art laboratories for science, computing, and engineering." },
-            { icon: "🌍", title: "Global Network", desc: "Exchange programs and partnerships with universities worldwide." },
-          ].map((f) => (
-            <article key={f.title} className="bg-card rounded-xl p-6 border border-border shadow-sm hover:shadow-md transition">
-              <div className="text-3xl">{f.icon}</div>
-              <h3 className="mt-3 text-xl font-semibold">{f.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{f.desc}</p>
-            </article>
-          ))}
+      <section className="mx-auto max-w-6xl px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
+        <img src={library} alt="BrightPath Academy library with tall bookshelves and students reading"
+          width={1024} height={768} loading="lazy"
+          className="rounded-xl shadow-lg w-full h-auto" />
+        <div>
+          <h2 className="text-3xl font-bold">Our Story</h2>
+          <p className="mt-3 text-muted-foreground">
+            Established in 2005, BrightPath Academy began with a single mission: to make
+            quality education accessible to every aspiring student. Today, we serve over
+            10,000 students across 50+ programs spanning the arts, sciences, business,
+            and technology.
+          </p>
+          <p className="mt-3 text-muted-foreground">
+            Our campus blends tradition with innovation — historic lecture halls sit
+            alongside cutting-edge research labs and digital learning studios.
+          </p>
         </div>
       </section>
 
-      {/* Stats */}
       <section className="bg-accent">
-        <div className="mx-auto max-w-6xl px-4 py-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div className="mx-auto max-w-6xl px-4 py-16 grid md:grid-cols-3 gap-6">
           {[
-            ["10,000+", "Students"], ["250+", "Faculty"], ["50+", "Programs"], ["95%", "Placement"],
-          ].map(([n, l]) => (
-            <div key={l}>
-              <div className="text-3xl md:text-4xl font-bold font-display text-primary">{n}</div>
-              <div className="text-sm text-muted-foreground mt-1">{l}</div>
+            { h: "Our Mission", p: "To deliver transformative education that empowers students to thrive in a rapidly changing world." },
+            { h: "Our Vision", p: "To be a globally recognized institution known for academic rigor, ethical leadership, and innovation." },
+            { h: "Our Values", p: "Excellence, integrity, inclusion, curiosity, and lifelong learning guide everything we do." },
+          ].map((v) => (
+            <div key={v.h} className="bg-card rounded-xl p-6 border border-border">
+              <h3 className="text-xl font-semibold text-primary">{v.h}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{v.p}</p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* CTA with image */}
-      <section className="mx-auto max-w-6xl px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
-        <img
-          src={classroom}
-          alt="Diverse students collaborating on laptops in a modern classroom"
-          width={1024}
-          height={768}
-          loading="lazy"
-          className="rounded-xl shadow-lg w-full h-auto"
-        />
-        <div>
-          <h2 className="text-3xl md:text-4xl font-bold">Built for Curious Minds</h2>
-          <p className="mt-3 text-muted-foreground">
-            From day one, our students engage in research, real-world projects, and
-            collaborative learning. We don't just teach — we mentor the next generation
-            of thinkers, builders, and leaders.
-          </p>
-          <Link to="/about" className="mt-6 inline-flex items-center px-5 py-2.5 rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90">
-            Learn More About Us →
-          </Link>
         </div>
       </section>
     </Layout>
