@@ -1,67 +1,57 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Layout } from "@/components/Layout";
-import library from "@/assets/library.jpg";
-
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About BrightPath Academy — Our Mission & History" },
-      { name: "description", content: "Founded in 2005, BrightPath Academy is committed to academic excellence, innovation, and student success. Learn about our mission, vision and values." },
-      { name: "keywords", content: "about brightpath, education institute, mission, vision, history, academy" },
-      { property: "og:title", content: "About BrightPath Academy" },
-      { property: "og:description", content: "Our mission, vision, and 20-year legacy of educational excellence." },
-      { property: "og:url", content: "/about" },
-    ],
-    links: [{ rel: "canonical", href: "/about" }],
-  }),
-  component: About,
-});
-
-function About() {
-  return (
-    <Layout>
-      <section className="bg-primary text-primary-foreground py-16">
-        <div className="mx-auto max-w-6xl px-4">
-          <h1 className="text-4xl md:text-5xl font-bold">About BrightPath</h1>
-          <p className="mt-3 max-w-2xl opacity-90">
-            Two decades of nurturing minds, building careers, and shaping leaders.
-          </p>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
-        <img src={library} alt="BrightPath Academy library with tall bookshelves and students reading"
-          width={1024} height={768} loading="lazy"
-          className="rounded-xl shadow-lg w-full h-auto" />
-        <div>
-          <h2 className="text-3xl font-bold">Our Story</h2>
-          <p className="mt-3 text-muted-foreground">
-            Established in 2005, BrightPath Academy began with a single mission: to make
-            quality education accessible to every aspiring student. Today, we serve over
-            10,000 students across 50+ programs spanning the arts, sciences, business,
-            and technology.
-          </p>
-          <p className="mt-3 text-muted-foreground">
-            Our campus blends tradition with innovation — historic lecture halls sit
-            alongside cutting-edge research labs and digital learning studios.
-          </p>
-        </div>
-      </section>
-
-      <section className="bg-accent">
-        <div className="mx-auto max-w-6xl px-4 py-16 grid md:grid-cols-3 gap-6">
-          {[
-            { h: "Our Mission", p: "To deliver transformative education that empowers students to thrive in a rapidly changing world." },
-            { h: "Our Vision", p: "To be a globally recognized institution known for academic rigor, ethical leadership, and innovation." },
-            { h: "Our Values", p: "Excellence, integrity, inclusion, curiosity, and lifelong learning guide everything we do." },
-          ].map((v) => (
-            <div key={v.h} className="bg-card rounded-xl p-6 border border-border">
-              <h3 className="text-xl font-semibold text-primary">{v.h}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{v.p}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-    </Layout>
-  );
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About Us — BrightPath Academy</title>
+<meta name="description" content="Learn about BrightPath Academy's mission, vision, faculty, and 25-year legacy of educational excellence.">
+<link rel="canonical" href="https://brightpath-academy.netlify.app/about.html">
+<meta property="og:title" content="About BrightPath Academy">
+<meta property="og:description" content="25 years of educational excellence and innovation.">
+<meta property="og:image" content="assets/library.jpg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>🎓</text></svg>">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav"><div class="container nav-inner">
+  <a href="index.html" class="logo">Bright<span>Path</span></a>
+  <button class="menu-btn" aria-label="Menu">☰</button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="courses.html">Courses</a></li><li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div></header>
+<main>
+<section class="hero"><div class="container hero-grid">
+  <div>
+    <span class="tag">Our Story</span>
+    <h1>A legacy of <span class="gradient-text">excellence</span></h1>
+    <p>Founded in 2001, BrightPath Academy has been a beacon of educational excellence, transforming over 50,000 students into leaders across industries worldwide.</p>
+  </div>
+  <div class="hero-img"><img src="assets/library.jpg" alt="Historic library at BrightPath Academy"></div>
+</div></section>
+<section><div class="container">
+  <div class="section-head"><h2>Mission &amp; Vision</h2></div>
+  <div class="cards">
+    <article class="card"><div class="card-body"><span class="tag">Mission</span><h3>Empower Every Learner</h3><p>To provide accessible, high-quality education that prepares students for meaningful careers and lifelong growth through innovation and mentorship.</p></div></article>
+    <article class="card"><div class="card-body"><span class="tag">Vision</span><h3>Lead Educational Innovation</h3><p>To be the world's most trusted education institution, blending tradition with technology to shape thoughtful global citizens.</p></div></article>
+    <article class="card"><div class="card-body"><span class="tag">Values</span><h3>Integrity &amp; Curiosity</h3><p>We nurture honesty, intellectual curiosity, inclusion, and resilience in every student and educator who joins our community.</p></div></article>
+  </div>
+</div></section>
+<section><div class="container">
+  <div class="section-head"><h2>By the Numbers</h2></div>
+  <div class="stats">
+    <div class="stat"><strong>25</strong>Years of Excellence</div>
+    <div class="stat"><strong>50K+</strong>Alumni Worldwide</div>
+    <div class="stat"><strong>120+</strong>Industry Partners</div>
+    <div class="stat"><strong>30+</strong>Countries Represented</div>
+  </div>
+</div></section>
+</main>
+<footer><div class="container">
+  <p>© 2026 BrightPath Academy. Crafted with purpose for lifelong learners.</p>
+</div></footer>
+<script src="script.js"></script>
+</body>
+</html>
