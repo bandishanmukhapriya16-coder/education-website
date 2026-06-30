@@ -1,116 +1,74 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import heroCampus from "@/assets/hero-campus.jpg";
-import classroom from "@/assets/classroom.jpg";
-import { Layout } from "@/components/Layout";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "BrightPath Academy — Quality Education for a Brighter Future" },
-      { name: "description", content: "BrightPath Academy offers undergraduate and postgraduate courses with experienced faculty, modern labs and a vibrant campus. Apply for admission today." },
-      { name: "keywords", content: "education, academy, university, courses, admission, college, undergraduate, postgraduate, BrightPath" },
-      { property: "og:title", content: "BrightPath Academy — Quality Education for a Brighter Future" },
-      { property: "og:description", content: "Undergraduate and postgraduate courses, expert faculty, modern campus." },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-  }),
-  component: Home,
-});
-
-function Home() {
-  return (
-    <Layout>
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <img
-          src={heroCampus}
-          alt="BrightPath Academy modern campus with students walking"
-          width={1536}
-          height={1024}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/40" />
-        <div className="relative mx-auto max-w-6xl px-4 py-24 md:py-32 text-primary-foreground">
-          <span className="inline-block px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-semibold">
-            Admissions Open 2026
-          </span>
-          <h1 className="mt-4 text-4xl md:text-6xl font-bold max-w-3xl">
-            Learn Today, Lead Tomorrow.
-          </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-2xl opacity-90">
-            BrightPath Academy delivers world-class education with experienced faculty,
-            modern laboratories, and a campus designed to inspire excellence.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link to="/courses" className="inline-flex items-center px-6 py-3 rounded-md bg-secondary text-secondary-foreground font-semibold hover:opacity-90 transition">
-              Explore Courses
-            </Link>
-            <Link to="/contact" className="inline-flex items-center px-6 py-3 rounded-md bg-white/10 backdrop-blur border border-white/30 font-semibold hover:bg-white/20 transition">
-              Apply Now
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Highlights */}
-      <section className="mx-auto max-w-6xl px-4 py-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-center">Why Choose BrightPath?</h2>
-        <p className="mt-2 text-center text-muted-foreground max-w-2xl mx-auto">
-          A 20-year legacy of academic excellence, innovation, and student success.
-        </p>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {[
-            { icon: "🎓", title: "Expert Faculty", desc: "Learn from PhD-qualified professors with decades of industry experience." },
-            { icon: "🔬", title: "Modern Labs", desc: "State-of-the-art laboratories for science, computing, and engineering." },
-            { icon: "🌍", title: "Global Network", desc: "Exchange programs and partnerships with universities worldwide." },
-          ].map((f) => (
-            <article key={f.title} className="bg-card rounded-xl p-6 border border-border shadow-sm hover:shadow-md transition">
-              <div className="text-3xl">{f.icon}</div>
-              <h3 className="mt-3 text-xl font-semibold">{f.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{f.desc}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="bg-accent">
-        <div className="mx-auto max-w-6xl px-4 py-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {[
-            ["10,000+", "Students"], ["250+", "Faculty"], ["50+", "Programs"], ["95%", "Placement"],
-          ].map(([n, l]) => (
-            <div key={l}>
-              <div className="text-3xl md:text-4xl font-bold font-display text-primary">{n}</div>
-              <div className="text-sm text-muted-foreground mt-1">{l}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA with image */}
-      <section className="mx-auto max-w-6xl px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
-        <img
-          src={classroom}
-          alt="Diverse students collaborating on laptops in a modern classroom"
-          width={1024}
-          height={768}
-          loading="lazy"
-          className="rounded-xl shadow-lg w-full h-auto"
-        />
-        <div>
-          <h2 className="text-3xl md:text-4xl font-bold">Built for Curious Minds</h2>
-          <p className="mt-3 text-muted-foreground">
-            From day one, our students engage in research, real-world projects, and
-            collaborative learning. We don't just teach — we mentor the next generation
-            of thinkers, builders, and leaders.
-          </p>
-          <Link to="/about" className="mt-6 inline-flex items-center px-5 py-2.5 rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90">
-            Learn More About Us →
-          </Link>
-        </div>
-      </section>
-    </Layout>
-  );
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BrightPath Academy — Premium Education for Future Leaders</title>
+<meta name="description" content="BrightPath Academy offers world-class courses in science, technology, arts and humanities with expert faculty, modern campus and proven results.">
+<meta name="keywords" content="BrightPath Academy, education, online courses, school, college, learning">
+<link rel="canonical" href="https://brightpath-academy.netlify.app/">
+<meta property="og:title" content="BrightPath Academy — Premium Education">
+<meta property="og:description" content="World-class courses, expert faculty, modern campus.">
+<meta property="og:image" content="assets/hero-campus.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>🎓</text></svg>">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"EducationalOrganization","name":"BrightPath Academy","url":"https://brightpath-academy.netlify.app/","logo":"assets/hero-campus.jpg","description":"Premium education institution offering diverse courses."}
+</script>
+</head>
+<body>
+<header class="nav"><div class="container nav-inner">
+  <a href="index.html" class="logo">Bright<span>Path</span></a>
+  <button class="menu-btn" aria-label="Menu">☰</button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div></header>
+<main>
+<section class="hero"><div class="container hero-grid">
+  <div>
+    <span class="tag">Admissions Open 2026</span>
+    <h1>Shape your <span class="gradient-text">future</span> at BrightPath Academy</h1>
+    <p>A premium learning ecosystem combining world-class faculty, cutting-edge labs, and a vibrant campus community to prepare you for tomorrow's challenges.</p>
+    <div class="hero-actions">
+      <a href="courses.html" class="btn btn-primary">Explore Courses</a>
+      <a href="contact.html" class="btn btn-outline">Apply Now</a>
+    </div>
+  </div>
+  <div class="hero-img"><img src="assets/hero-campus.jpg" alt="BrightPath Academy modern campus at dusk" loading="eager"></div>
+</div></section>
+<section><div class="container">
+  <div class="stats">
+    <div class="stat"><strong>15K+</strong>Students</div>
+    <div class="stat"><strong>250+</strong>Expert Faculty</div>
+    <div class="stat"><strong>95%</strong>Placement Rate</div>
+    <div class="stat"><strong>40+</strong>Programs</div>
+  </div>
+</div></section>
+<section><div class="container">
+  <div class="section-head">
+    <h2>Featured Programs</h2>
+    <p>Hand-picked courses designed by industry experts to give you a competitive edge.</p>
+  </div>
+  <div class="cards">
+    <article class="card"><img src="assets/lab.jpg" alt="Computer science laboratory"><div class="card-body"><span class="tag">Technology</span><h3>Computer Science</h3><p>AI, ML, full-stack development and modern computing.</p></div></article>
+    <article class="card"><img src="assets/classroom.jpg" alt="Business management classroom"><div class="card-body"><span class="tag">Business</span><h3>Business Management</h3><p>Leadership, finance and entrepreneurship fundamentals.</p></div></article>
+    <article class="card"><img src="assets/library.jpg" alt="Library and humanities study area"><div class="card-body"><span class="tag">Arts</span><h3>Liberal Arts</h3><p>Literature, philosophy and critical-thinking skills.</p></div></article>
+  </div>
+  <p style="text-align:center;margin-top:2rem"><a href="courses.html" class="btn btn-outline">View All Courses →</a></p>
+</div></section>
+</main>
+<footer><div class="container">
+  <p>© 2026 BrightPath Academy. Crafted with purpose for lifelong learners.</p>
+  <div class="social"><a href="#">Twitter</a><a href="#">LinkedIn</a><a href="#">Instagram</a></div>
+</div></footer>
+<script src="script.js"></script>
+</body>
+</html>
