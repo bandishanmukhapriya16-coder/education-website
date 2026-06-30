@@ -1,5 +1,5 @@
 # BrightPath Academy — Static HTML Site
-Pure HTML / CSS / JavaScript site ready for **Netlify** hosting.
+Pure HTML / CSS / JavaScript site 
 ## Pages
 - `index.html` — Home (hero, stats, featured courses)
 - `about.html` — About (mission, vision, values)
@@ -9,12 +9,9 @@ Pure HTML / CSS / JavaScript site ready for **Netlify** hosting.
 ## Features
 - Dark Premium theme (Space Grotesk + DM Sans)
 - Fully responsive with hamburger mobile menu
-- Per-page SEO: title, description, canonical, OpenGraph, Twitter, JSON-LD
-- `robots.txt` + `sitemap.xml`
-- Semantic HTML, alt text on every image, lazy loading
-- No build step — pure static files
-## Deploy to Netlify
-1. Zip the contents of this `static-site/` folder (not the folder itself).
-2. Go to https://app.netlify.com/drop and drop the zip.
-3. Your live URL appears in seconds — submit it for the assignment.
-Or via Git: push this folder as repo root and connect to Netlify (no build command, publish directory = `/`).
+- Semantic HTML, alt text on every image
+## Developer
+- Name : Bandi Shanmukha Priya
+- PRN number : 250200137
+- Roll number : SCDS/2025/2020
+
