@@ -8,26 +8,32 @@
 <link rel="canonical" href="https://brightpath-academy.netlify.app/contact.html">
 <meta property="og:title" content="Contact BrightPath Academy">
 <meta property="og:description" content="Get in touch with our admissions team or apply online.">
-<meta property="og:image" content="assets/graduation.jpg">
+<meta property="og:image" content="images/graduation.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>🎓</text></svg>">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="nav"><div class="container nav-inner">
   <a href="index.html" class="logo">Bright<span>Path</span></a>
   <button class="menu-btn" aria-label="Menu">☰</button>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
-    <li><a href="courses.html">Courses</a></li><li><a href="gallery.html">Gallery</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="destinations.html">Destinations</a></li>
+    <li><a href="packages.html">Packages</a></li>
+    <li><a href="booking.html">Booking</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </div></header>
+
 <main>
 <section style="padding:3rem 0 1rem"><div class="container" style="text-align:center">
   <span class="tag">Get in touch</span>
   <h1>Start your <span class="gradient-text">journey</span></h1>
   <p style="max-width:600px;margin:1rem auto 0">Fill out the registration form and our admissions team will reach out within 24 hours.</p>
 </div></section>
+
 <section><div class="container">
   <form class="form" id="registerForm" novalidate>
     <div class="field"><label for="name">Full Name</label><input id="name" name="name" type="text" placeholder="Your full name"><span class="err" id="err-name"></span></div>
@@ -46,6 +52,7 @@
     <button type="submit" class="btn btn-primary" style="width:100%">Submit Application</button>
     <div class="status" id="formStatus" role="status"></div>
   </form>
+
   <div class="cards" style="margin-top:3rem">
     <article class="card"><div class="card-body"><span class="tag">Visit</span><h3>Main Campus</h3><p>123 Knowledge Avenue, Tech City, 560001</p></div></article>
     <article class="card"><div class="card-body"><span class="tag">Call</span><h3>Admissions</h3><p>+91 98765 43210<br>Mon–Sat, 9 AM – 6 PM</p></div></article>
@@ -53,6 +60,7 @@
   </div>
 </div></section>
 </main>
+
 <footer><div class="container"><p>© 2026 BrightPath Academy.</p></div></footer>
 <script src="script.js"></script>
 </body>
