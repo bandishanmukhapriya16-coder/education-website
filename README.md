@@ -14,4 +14,5 @@ Pure HTML / CSS / JavaScript site
 - Name : Bandi Shanmukha Priya
 - PRN number : 250200137
 - Roll number : SCDS/2025/2020
+- live website: Live Website: https://brightpathacademi.netlify.app
 
